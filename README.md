@@ -11,7 +11,9 @@ Anunciar a presença da Expedibor na feira **MinasParts 2026** (Expominas, Belo 
 | Documento | Conteúdo |
 |-----------|----------|
 | [docs/pesquisa/PESQUISA_MERCADO_MINASPARTS.md](docs/pesquisa/PESQUISA_MERCADO_MINASPARTS.md) | A feira, público, mercado de reposição, concorrentes |
-| [docs/midia/PLANO_MARCA_AWARENESS_ALWAYSON.md](docs/midia/PLANO_MARCA_AWARENESS_ALWAYSON.md) | Plano de marca / reconhecimento (always-on, jun a ago), ~R$ 750 |
+| [hub/AGENTES.md](hub/AGENTES.md) | Hub de agentes do projeto: o que cada papel faz e quando acionar |
+| [docs/midia/PLANO_MARCA_AWARENESS_ALWAYSON.md](docs/midia/PLANO_MARCA_AWARENESS_ALWAYSON.md) | Plano de marca / reconhecimento (always-on), R$ 1.500/mês (R$ 750/canal) |
+| [docs/midia/PLANO_PRE_FEIRA_JUN_JUL.md](docs/midia/PLANO_PRE_FEIRA_JUN_JUL.md) | Plano pré-feira (junho e julho): setup, conteúdo e públicos |
 | [docs/midia/PLANO_MIDIA_AWARENESS_MINASPARTS.md](docs/midia/PLANO_MIDIA_AWARENESS_MINASPARTS.md) | Plano de mídia da feira (Meta + Google), verba, cronograma, segmentação |
 | [copy/COPYS_AWARENESS_MINASPARTS.md](copy/COPYS_AWARENESS_MINASPARTS.md) | Copies e roteiros de vídeo (estático + vídeo) |
 

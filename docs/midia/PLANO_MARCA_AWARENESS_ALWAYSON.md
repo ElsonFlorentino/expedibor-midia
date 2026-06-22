@@ -1,8 +1,7 @@
 # Plano de Marca — Reconhecimento (always-on) Expedibor
 
 > Objetivo do cliente: **reconhecimento de marca e visibilidade. NÃO é lead.**
-> Verba: **R$ 1.500 no total, R$ 750 por canal (Meta + Google).** Separada da verba da feira MinasParts.
-> A confirmar: esse valor é **por mês** (recorrente, ideal para always-on) ou único.
+> Verba: **R$ 1.500 por mês** (recorrente), **R$ 750 por canal (Meta + Google)**. Separada da verba da feira MinasParts.
 
 ## 1. Princípio
 Reconhecimento de marca se constrói com **frequência e consistência**, não com cliques. Mede-se por **quantas pessoas do trade lembram da Expedibor**, não por leads. Por isso, otimização e métricas mudam em relação a uma campanha de performance.
