@@ -50,7 +50,8 @@ wb = Workbook()
 ws = wb.active
 ws.title = "Fase 1 - Awareness"
 
-TEAL = "0A6B63"; DARK = "1C1C1C"; HEADBG = "16313A"
+# Paleta neutra (NAO usar cores de outras marcas). Acento = azul.
+TEAL = "1F4E79"; DARK = "1C1C1C"
 headers = ["ID", "Pilar", "Canal", "Formato", "Texto do post (legenda)", "Texto da arte (na imagem)", "CTA"]
 widths = [6, 22, 16, 20, 60, 42, 20]
 
