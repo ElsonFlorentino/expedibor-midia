@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Expedibor — Painel de Mídia</title>
+<style>
+:root{--bg:#0a0a0a;--card:#141414;--border:#222;--green:#00C853;--teal:#03E4D0;--blue:#448AFF;--purple:#B388FF;--orange:#FF9100;--red:#FF5252;--gold:#FFD600;--text:#E0E0E0;--dim:#666;--white:#fff;--pink:#FF4081}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);padding:24px;min-height:100vh}
+h1{font-size:22px;color:var(--white);margin-bottom:4px}
+.sub{color:var(--dim);font-size:13px;margin-bottom:20px}
+.section-title{font-size:12px;color:var(--teal);text-transform:uppercase;letter-spacing:2px;margin:28px 0 12px}
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-bottom:8px}
+.stat{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px;text-align:center}
+.sv{font-size:24px;font-weight:800}.sl{font-size:9px;color:var(--dim);margin-top:4px;text-transform:uppercase;letter-spacing:1px}
+/* cards grid */
+.grid{display:grid;gap:12px}
+.g3{grid-template-columns:repeat(3,1fr)}.g2{grid-template-columns:repeat(2,1fr)}
+.g4{grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;position:relative;overflow:hidden}
+.card.bar::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%}
+.bar.green::before{background:var(--green)}.bar.teal::before{background:var(--teal)}.bar.orange::before{background:var(--orange)}.bar.blue::before{background:var(--blue)}.bar.gold::before{background:var(--gold)}
+.card h3{font-size:14px;color:var(--white);margin-bottom:4px}
+.card .meta{font-size:11px;color:var(--dim);margin-bottom:8px}
+.card p{font-size:12px;line-height:1.5;color:var(--text)}
+.pill{display:inline-block;padding:2px 8px;border-radius:10px;font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.5px}
+.pill.now{background:rgba(0,200,83,.15);color:var(--green)}
+.pill.next{background:rgba(255,145,0,.15);color:var(--orange)}
+.pill.later{background:rgba(68,138,255,.15);color:var(--blue)}
+.budget{font-size:20px;font-weight:800;color:var(--teal);margin:6px 0}
+/* agents */
+.agent-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px}
+.agent-head{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.avatar{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:var(--bg)}
+.agent-name{font-size:14px;font-weight:700;color:var(--white)}
+.agent-role{font-size:11px;color:var(--dim)}
+.agent-scope{font-size:12px;color:var(--text);line-height:1.5;margin-bottom:8px}
+.tags{display:flex;gap:4px;flex-wrap:wrap}
+.tag{padding:2px 7px;border-radius:4px;font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+.tag.teal{background:rgba(3,228,208,.12);color:var(--teal)}.tag.green{background:rgba(0,200,83,.12);color:var(--green)}.tag.blue{background:rgba(68,138,255,.12);color:var(--blue)}.tag.purple{background:rgba(179,136,255,.12);color:var(--purple)}.tag.orange{background:rgba(255,145,0,.12);color:var(--orange)}.tag.gold{background:rgba(255,214,0,.12);color:var(--gold)}.tag.pink{background:rgba(255,64,129,.12);color:var(--pink)}
+/* copies table */
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;font-size:12px}
+th{background:#1c1c1c;color:var(--white);text-align:left;padding:10px;font-size:10px;text-transform:uppercase;letter-spacing:.5px}
+td{padding:10px;border-top:1px solid var(--border);vertical-align:top;line-height:1.45}
+td .pilar{color:var(--teal);font-weight:700}
+td .arte{color:var(--gold)}
+.links{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+.links a{font-size:12px;color:var(--teal);text-decoration:none;border:1px solid var(--border);padding:8px 12px;border-radius:8px}
+.links a:hover{border-color:var(--teal)}
+.foot{color:var(--dim);font-size:11px;margin-top:28px;border-top:1px solid var(--border);padding-top:12px}
+@media(max-width:900px){.stats{grid-template-columns:repeat(3,1fr)}.g3,.g2{grid-template-columns:1fr}}
+@media(max-width:600px){.stats{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+
+<h1>Expedibor — Painel de Mídia</h1>
+<p class="sub">Indústria de suspensão em borracha · mercado de reposição · objetivo: reconhecimento de marca</p>
+
+<div class="stats">
+  <div class="stat"><div class="sv" style="color:var(--teal)">R$1.500</div><div class="sl">Verba / mês</div></div>
+  <div class="stat"><div class="sv" style="color:var(--green)">2</div><div class="sl">Canais</div></div>
+  <div class="stat"><div class="sv" style="color:var(--blue)">3</div><div class="sl">Fases</div></div>
+  <div class="stat"><div class="sv" style="color:var(--purple)">8</div><div class="sl">Agentes</div></div>
+  <div class="stat"><div class="sv" style="color:var(--gold)">12</div><div class="sl">Copies Fase 1</div></div>
+  <div class="stat"><div class="sv" style="color:var(--orange)">~100</div><div class="sl">Dias p/ feira</div></div>
+</div>
+
+<div class="section-title">Cronograma do projeto</div>
+<div class="grid g3">
+  <div class="card bar green">
+    <span class="pill now">Agora</span>
+    <h3>Marca / Reconhecimento</h3>
+    <div class="meta">Always-on · jun a ago</div>
+    <div class="budget">R$ 1.500/mês</div>
+    <p>Fazer a marca existir e ser lembrada pelo trade de MG. Meta (Reconhecimento) + YouTube (Video Reach). Constrói públicos para a feira.</p>
+  </div>
+  <div class="card bar orange">
+    <span class="pill now">Em curso</span>
+    <h3>Pré-feira</h3>
+    <div class="meta">Setup + públicos · jun/jul</div>
+    <div class="budget">incluso na verba/mês</div>
+    <p>Kit de marca, perfis, pixel/tag, primeiros criativos e base de CRM. Conteúdo orgânico 2 a 3x/semana.</p>
+  </div>
+  <div class="card bar blue">
+    <span class="pill later">Set / Out</span>
+    <h3>Awareness da Feira</h3>
+    <div class="meta">MinasParts · 30/09 a 03/10</div>
+    <div class="budget">R$ 750 / plataforma</div>
+    <p>Anunciar a presença na MinasParts (Expominas/BH) sobre o terreno já aquecido. Retargeting dos públicos da fase de marca.</p>
+  </div>
+</div>
+
+<div class="section-title">Canais — Fase de marca (R$ 750 por canal)</div>
+<div class="grid g2">
+  <div class="card bar teal">
+    <h3>Meta Ads</h3>
+    <div class="meta">Facebook + Instagram</div>
+    <div class="budget">R$ 750/mês</div>
+    <p>Objetivo Reconhecimento (otimização lembrança de anúncio). Feed, Reels e Stories. Vídeo + estático. Geo MG, lookalike de CRM + interesses automotivos. Sem objetivo de lead.</p>
+  </div>
+  <div class="card bar teal">
+    <h3>Google / YouTube</h3>
+    <div class="meta">Video Reach</div>
+    <div class="budget">R$ 750/mês</div>
+    <p>Bumper 6s (recall) + in-stream 15s. Geo MG, afinidade/intenção automotiva. Sem Pesquisa nem PMax (isso é lead, não reconhecimento).</p>
+  </div>
+</div>
+
+<div class="section-title">Hub de agentes</div>
+<div class="grid g4">
+  <div class="agent-card"><div class="agent-head"><div class="avatar" style="background:var(--gold)">NX</div><div><div class="agent-name">Nexus</div><div class="agent-role">Orquestrador</div></div></div><div class="agent-scope">Coordena o squad, prioriza e conecta as entregas.</div><div class="tags"><span class="tag gold">coordenação</span></div></div>
+  <div class="agent-card"><div class="agent-head"><div class="avatar" style="background:var(--teal)">EM</div><div><div class="agent-name">Estrategista de Mídia</div><div class="agent-role">Planejamento</div></div></div><div class="agent-scope">Objetivos, canais, verba, segmentação e cronograma.</div><div class="tags"><span class="tag teal">estratégia</span></div></div>
+  <div class="agent-card"><div class="agent-head"><div class="avatar" style="background:var(--blue)">PA</div><div><div class="agent-name">Pesquisador / Analista</div><div class="agent-role">Mercado</div></div></div><div class="agent-scope">Feira, concorrentes, público e tendências do aftermarket.</div><div class="tags"><span class="tag blue">pesquisa</span></div></div>
+  <div class="agent-card"><div class="agent-head"><div class="avatar" style="background:var(--pink)">CW</div><div><div class="agent-name">Copywriter</div><div class="agent-role">Criação</div></div></div><div class="agent-scope">Copies e textos na voz da marca, sem travessão.</div><div class="tags"><span class="tag pink">copy</span></div></div>
+  <div class="agent-card"><div class="agent-head"><div class="avatar" style="background:var(--purple)">DS</div><div><div class="agent-name">Designer / Criação</div><div class="agent-role">Visual</div></div></div><div class="agent-scope">Estáticos e roteiros de vídeo (9:16, 16:9, 1:1) + kit de marca.</div><div class="tags"><span class="tag purple">design</span></div></div>
+  <div class="agent-card"><div class="agent-head"><div class="avatar" style="background:var(--green)">GT</div><div><div class="agent-name">Gestor de Tráfego</div><div class="agent-role">Ad Ops</div></div></div><div class="agent-scope">Sobe, configura e otimiza campanhas; públicos, pixel/tag.</div><div class="tags"><span class="tag green">tráfego</span></div></div>
+  <div class="agent-card"><div class="agent-head"><div class="avatar" style="background:var(--orange)">AP</div><div><div class="agent-name">Analista de Performance</div><div class="agent-role">Dados</div></div></div><div class="agent-scope">Mede awareness (alcance, CPM, frequência, recall, VTR).</div><div class="tags"><span class="tag orange">dados</span></div></div>
+  <div class="agent-card"><div class="agent-head"><div class="avatar" style="background:var(--teal)">SC</div><div><div class="agent-name">Social / Conteúdo</div><div class="agent-role">Orgânico</div></div></div><div class="agent-scope">Calendário, pilares e ritmo de postagem nos perfis.</div><div class="tags"><span class="tag teal">conteúdo</span></div></div>
+</div>
+
+<div class="section-title">Copies da Fase 1 — Awareness / Marca</div>
+<table>
+  <thead><tr><th>Pilar</th><th>Canal · Formato</th><th>Texto do post</th><th>Texto da arte</th><th>CTA</th></tr></thead>
+  <tbody>
+    <tr><td class="pilar">Marca / Institucional</td><td>Meta + YouTube · Vídeo 15s</td><td>Há mais de 15 anos a Expedibor fabrica peças de suspensão em borracha. Buchas, batentes, coxins, kits e tubos, com ISO 9001.</td><td class="arte">Qualidade e confiança, peça por peça</td><td>Conheça a Expedibor</td></tr>
+    <tr><td class="pilar">Produto / Buchas</td><td>Meta · Estático</td><td>Bucha que assenta certo é serviço que não volta. Ampla cobertura de aplicações, com a precisão que a oficina precisa.</td><td class="arte">Encaixe certo, serviço que não volta</td><td>Veja a linha</td></tr>
+    <tr><td class="pilar">Produto / Expedikits</td><td>Meta + YouTube · Vídeo 15s</td><td>Tudo o que o amortecedor precisa, num kit só. Os Expedikits chegam montados e prontos pra aplicar.</td><td class="arte">Kit de amortecedor pronto pra aplicar</td><td>Conheça os Expedikits</td></tr>
+    <tr><td class="pilar">Qualidade / ISO 9001</td><td>Meta + YouTube</td><td>ISO 9001 não é selo na parede, é processo. Cada peça passa por controle do início ao fim.</td><td class="arte">Qualidade no processo, peça por peça</td><td>Conheça a Expedibor</td></tr>
+    <tr><td class="pilar">Dica técnica</td><td>Meta + YouTube · Reels</td><td>Ao trocar o amortecedor, troque também coxim, batente e bucha. Com os Expedikits, já vem tudo junto.</td><td class="arte">Trocou o amortecedor? Troque a borracha</td><td>Dica Expedibor</td></tr>
+    <tr><td class="pilar">Bastidores / Fábrica</td><td>Meta + YouTube</td><td>Mais de 10 mil peças por dia saem da nossa fábrica. Tecnologia, controle e gente que entende de borracha.</td><td class="arte">+10 mil peças por dia</td><td>Conheça a fábrica</td></tr>
+    <tr><td class="pilar">Amplitude</td><td>Meta + YouTube</td><td>Mais de 800 itens em linha. Grande chance de ter peça de suspensão Expedibor para o carro que entra na oficina.</td><td class="arte">+800 itens em linha</td><td>Veja a linha</td></tr>
+    <tr><td class="pilar">Bumper 6s</td><td>YouTube · Vídeo 6s</td><td>Mensagem única e repetível para recall.</td><td class="arte">Expedibor · Suspensão em borracha · ISO 9001</td><td>(logo)</td></tr>
+  </tbody>
+</table>
+<p class="sub" style="margin-top:8px">Planilha completa (12 copies + coxins, tubos, distribuição, confiança): <strong>copy/COPYS_FASE1_AWARENESS.xlsx</strong></p>
+
+<div class="section-title">Pendências do cliente</div>
+<div class="card">
+  <p>• Assets de marca (logo HD, fotos de produto, identidade/cores) &nbsp; • Lista de clientes (CRM) para lookalike &nbsp; • Acesso às contas de anúncio (Meta Business / Google Ads) e ao site (pixel/tag) &nbsp; • Confirmar praça (só MG ou nacional) &nbsp; • Número do estande (para a fase da feira)</p>
+</div>
+
+<div class="section-title">Documentos</div>
+<div class="links">
+  <a href="../docs/midia/PLANO_MARCA_AWARENESS_ALWAYSON.md">Plano de marca (always-on)</a>
+  <a href="../docs/midia/PLANO_PRE_FEIRA_JUN_JUL.md">Plano pré-feira jun/jul</a>
+  <a href="../docs/midia/PLANO_MIDIA_AWARENESS_MINASPARTS.md">Plano da feira</a>
+  <a href="../docs/pesquisa/PESQUISA_MERCADO_MINASPARTS.md">Pesquisa de mercado</a>
+  <a href="../hub/AGENTES.md">Hub de agentes</a>
+  <a href="../copy/COPYS_FASE1_AWARENESS.xlsx">Copies (xlsx)</a>
+</div>
+
+<div class="foot">Expedibor — Painel de Mídia · projeto separado · atualizado em jun/2026</div>
+</body>
+</html>
