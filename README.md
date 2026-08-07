@@ -16,6 +16,7 @@ Anunciar a presença da Expedibor na feira **MinasParts 2026** (Expominas, Belo 
 | [docs/midia/PLANO_PRE_FEIRA_JUN_JUL.md](docs/midia/PLANO_PRE_FEIRA_JUN_JUL.md) | Plano pré-feira (junho e julho): setup, conteúdo e públicos |
 | [docs/midia/PLANO_MIDIA_AWARENESS_MINASPARTS.md](docs/midia/PLANO_MIDIA_AWARENESS_MINASPARTS.md) | Plano de mídia da feira (Meta + Google), verba, cronograma, segmentação |
 | [copy/COPYS_AWARENESS_MINASPARTS.md](copy/COPYS_AWARENESS_MINASPARTS.md) | Copies e roteiros de vídeo (estático + vídeo) |
+| [painel/mockups-instagram-minasparts.html](painel/mockups-instagram-minasparts.html) | Mockups visuais dos posts (Instagram), legendas, público por criativo e research (Andromeda + feira) |
 
 ## Estrutura
 
