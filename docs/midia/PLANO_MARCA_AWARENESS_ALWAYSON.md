@@ -1,7 +1,9 @@
 # Plano de Marca — Reconhecimento (always-on) Expedibor
 
 > Objetivo do cliente: **reconhecimento de marca e visibilidade. NÃO é lead.**
-> Verba: **R$ 1.500 por mês** (recorrente), **R$ 750 por canal (Meta + Google)**. Separada da verba da feira MinasParts.
+> Verba: **R$ 1.500 por mês** (recorrente). Separada da verba da feira MinasParts.
+>
+> ⚠️ **Atualização:** a conta de Google Ads foi desativada (suspensão não revertida). Por hora, **os R$ 1.500/mês rodam só no Meta Ads**. Retomar Google/YouTube quando (e se) uma nova conta for aberta.
 
 ## 1. Princípio
 Reconhecimento de marca se constrói com **frequência e consistência**, não com cliques. Mede-se por **quantas pessoas do trade lembram da Expedibor**, não por leads. Por isso, otimização e métricas mudam em relação a uma campanha de performance.
@@ -16,19 +18,17 @@ Reconhecimento de marca se constrói com **frequência e consistência**, não c
 - **Público:** trade de reposição (interesses: autopeças, manutenção/mecânica automotiva, oficina) + **lookalike da base de clientes (CRM)**. Geo: **Minas Gerais** como foco (compõe terreno para a feira), com opção de ampliar para praças nacionais relevantes.
 - **Frequência:** deixar acumular (~2 a 4 por semana) — recall precisa de repetição.
 
-### Google / YouTube (canal com verba própria: R$ 750)
-- **Video Reach no YouTube:** **bumper 6s** (formato desenhado para recall, CPM baixo) + **in-stream skippable 15s** para a mensagem completa.
-- **Demand Gen** opcional como complemento (awareness + consideração em YouTube/Discover/Gmail).
-- **NÃO usar** Rede de Pesquisa nem Performance Max: são captura de demanda/conversão (lead), não reconhecimento.
+### Google / YouTube — pausado (conta desativada)
+Estava planejado como canal complementar (Video Reach: bumper 6s + in-stream 15s), mas a conta de Google Ads foi desativada e a contestação não foi revertida. Fica de fora do plano até uma nova conta ser aberta.
 
-## 3. Divisão da verba (R$ 1.500, R$ 750 por canal)
+## 3. Divisão da verba (R$ 1.500, 100% Meta por enquanto)
 
 | Canal | Verba | Configuração |
 |-------|-------|--------------|
-| **Meta** | R$ 750 | Objetivo Reconhecimento, otimização ad recall. Feed + Reels + Stories. Vídeo + estático. Geo MG, lookalike de CRM + interesses automotivos. |
-| **Google / YouTube** | R$ 750 | Video Reach: bumper 6s + in-stream 15s. Geo MG. Públicos de afinidade/intenção automotiva. |
+| **Meta** | R$ 1.500 | Objetivo Reconhecimento, otimização ad recall. Feed + Reels + Stories. Vídeo + estático. Geo MG, lookalike de CRM + interesses automotivos. |
+| ~~Google / YouTube~~ | ~~R$ 750~~ | Pausado — conta desativada. Verba redirecionada pro Meta acima. |
 
-> Com R$ 750 por canal, **rodar os dois faz sentido**: Meta entrega recall barato e segmentação fina do trade; YouTube reforça a marca em vídeo no formato de recall (bumper). Mantenha frequência saudável (2 a 4) em cada um, sem pulverizar em muitos públicos.
+> Com R$ 1.500 só no Meta, dá pra manter a mesma frequência saudável (2 a 4) testando mais criativos em paralelo, já que não precisa mais dividir a verba entre plataformas.
 
 ## 4. Conteúdo (os criativos pagos saem do orgânico)
 Mesmos pilares do orgânico, impulsionados:
@@ -54,10 +54,10 @@ O público alcançado e engajado nesta fase vira **público quente/retargeting**
 
 ## 7. Calendário macro do ano
 - **Jun a ago:** marca/reconhecimento always-on (este plano) + orgânico recorrente + montar base (CRM).
-- **Set a out:** awareness da feira MinasParts (verba própria de ~R$ 750/plataforma) sobre terreno já aquecido.
+- **Set a out:** awareness da feira MinasParts (verba própria, hoje só Meta) sobre terreno já aquecido.
 
 ## 8. Pendências
-- Confirmar se R$ 750 é **mensal** ou único.
 - Assets de marca (logo HD, fotos de produto, identidade).
 - Lista de clientes (CRM) para lookalike.
 - Definir praça: só MG ou nacional.
+- Reabrir conta de Google Ads (fora do escopo imediato) e reavaliar se volta a compor o plano.
