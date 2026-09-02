@@ -100,18 +100,22 @@ O Expedito já tá de expectativa pra MinasParts 2026. De 30/09 a 03/10, no Expo
 
 **Rodada 1 (`Roteiro_prompt_de_vídeo_Gem.mp4`):** veio com a fala errada (lip-sync numa frase diferente da legenda) e o banner sem o logo oficial da MinasParts. Tentei corrigir por edição (TTS + composição do logo) em `assets/videos/roteiro-video-gem-editado.mp4` — o logo entrou bem e a marca d'água saiu, mas a sincronia labial não bate com a narração nova (não existe ferramenta de lip-sync confiável pra personagem 3D cartoon sem o rig original).
 
-**Rodada 2 (regeneração no Gemini com o prompt de correção):** boca parava de se mexer antes do áudio terminar — a fala pedida (21 palavras, ~8,4s falando em ritmo natural) era mais longa que a janela de fala do vídeo de referência (~5s), e o prompt também fixava "mantenha 10 segundos", o que provavelmente prendia o Gemini à janela curta do vídeo original. Corrigido abaixo: fala mais curta (13 palavras, ~5,2s) + duração liberada pra acompanhar o áudio.
+**Rodada 2 (regeneração no Gemini com o prompt de correção v2):** dois problemas — (1) boca parava de se mexer antes do áudio terminar, porque a fala pedida (21 palavras, ~8,4s) era mais longa que a janela de fala do vídeo de referência (~5s); (2) o Gemini **inventava** um logo genérico de MinasParts em vez de reproduzir a imagem anexada — modelo de vídeo não é confiável pra reproduzir logo exato de terceiros, mesmo anexando a imagem de referência.
 
-**Prompt de correção — v2 (colar no Gemini, chat novo, junto com dois anexos: o vídeo `Roteiro_prompt_de_vídeo_Gem.mp4` e a imagem `images.png` do logo oficial da MinasParts 2026):**
-> Use este vídeo como referência exata de personagem, cenário, câmera, iluminação e enquadramento. Mantenha o mascote 3D "Expedito" (boné branco com "EXP" em azul, bigode grosso, macacão azul com "EXPEDIBOR" no bolso), o estande da Expedibor ao fundo e o mesmo movimento lento de aproximação de câmera.
+**Decisão:** separar o trabalho. O Gemini só corrige a fala (mais curta ainda, pra caber com folga). O logo da MinasParts entra depois por edição direta minha (crop + composição, já validado duas vezes nesse vídeo — exato, sem invenção), não pelo Gemini.
+
+**Prompt de correção — v3 (colar no Gemini, chat novo, só com o vídeo `Roteiro_prompt_de_vídeo_Gem.mp4` anexado — **não precisa mais anexar o logo da MinasParts**):**
+> Use este vídeo como referência exata de personagem, cenário, câmera, iluminação, enquadramento e banner final. Mantenha o mascote 3D "Expedito" (boné branco com "EXP" em azul, bigode grosso, macacão azul com "EXPEDIBOR" no bolso), o estande da Expedibor ao fundo e o mesmo movimento lento de aproximação de câmera.
 >
-> A única mudança é a fala dele. Substitua o diálogo por, com sincronia labial correta em português brasileiro, do início ao fim da fala, sem cortar a animação da boca antes do áudio terminar: "A Expedibor estará na MinasParts 2026. Venha conhecer nossa linha completa de suspensão."
+> A única mudança é a fala dele. Substitua o diálogo por, com sincronia labial correta em português brasileiro, do início ao fim da fala, sem cortar a animação da boca antes do áudio terminar: "A Expedibor estará na MinasParts 2026. Venha nos conhecer."
 >
 > Ajuste a duração do vídeo e da animação de fala pra cobrir completamente esse áudio — não trave em 10 segundos nem na janela de fala mais curta do vídeo de referência; a boca precisa continuar se mexendo até a última palavra ser dita.
 >
-> No banner final (o card branco arredondado com a data e o local do evento), corrija a ordem dos logos: o logo da EXPEDIBOR vem primeiro/na frente, e o logo oficial da MinasParts 2026 (imagem anexada) vem depois, atrás ou ao lado dele — nessa ordem de leitura, Expedibor antes de MinasParts. Mantenha o texto "30 SET — 3 OUT · EXPOMINAS BH" como está.
+> Não altere o banner final — mantenha exatamente como está no vídeo de referência.
 >
 > Proporção vertical 9:16.
+
+**Depois de gerar:** me manda o vídeo novo (só com a fala corrigida) — eu recorto e componho o logo oficial da MinasParts no banner por edição direta, igual fiz da última vez.
 
 ---
 
