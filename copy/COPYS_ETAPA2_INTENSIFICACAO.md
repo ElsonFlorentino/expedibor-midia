@@ -122,6 +122,17 @@ O Expedito já tá de expectativa pra MinasParts 2026. De 30/09 a 03/10, no Expo
 **Prompt pro Sora (texto-pra-vídeo, 9:16, ~5-6s):**
 > Vertical 9:16 video, 3D-animated mascot character named "Expedito": stocky friendly man, thick brown mustache, blue eyes, white trucker cap with navy blue "EXP" lettering, white t-shirt under navy blue overalls with "EXPEDIBOR" printed on the chest pocket, black work gloves. He stands inside a modern trade-show booth with navy blue panels and soft warm lighting, a blurred product display wall behind him. He smiles warmly, waves with one hand, and speaks directly to camera with natural lip-sync in Brazilian Portuguese, mouth moving for the full length of the line: "A Expedibor estará na MinasParts 2026. Venha nos conhecer." Camera holds a steady medium shot with a slow, gentle push-in toward his face. No on-screen text, no logos, no banner, no watermark — just the character and the booth background, clean plate for text to be added afterward in post-production.
 
+**Alternativa — ElevenLabs (gera só o áudio, não vídeo):** o ElevenLabs é texto-pra-voz, não vídeo — a ideia é gerar o áudio da fala com qualidade boa aqui, e usar esse áudio como entrada num dos avatares (HeyGen, DomoAI, lipsync.studio), que sincroniza a boca com QUALQUER áudio que você mandar. Como esses avatares não têm o limite de "janela de fala pré-pronta" que trava o Gemini/Sora, dá pra usar a fala completa original de novo, sem precisar encurtar.
+
+**Texto pra gerar no ElevenLabs:**
+> A Expedibor estará na MinasParts 2026. Venha conhecer nossas soluções em coxins, buchas, batentes, tubos de refrigeração e kits de suspensão.
+
+**Configuração da voz:**
+- Idioma: Português (Brasil).
+- Procurar na biblioteca de vozes do ElevenLabs por uma voz **masculina, calorosa e confiante**, tom de quem recebe visitante num estande de feira — nem grave/sério demais, nem exagerado. Se tiver a opção de pré-visualizar, comparar 2-3 vozes com o texto acima antes de decidir.
+- Settings: Stability em torno de 40-50% (permite alguma variação natural de entonação sem ficar instável) e Similarity/Style um pouco acima do padrão, pra soar mais expressivo que uma leitura robótica de texto corrido.
+- Exportar em .mp3 ou .wav, qualidade alta (44.1kHz+), pra não perder qualidade quando for sincronizar a boca em cima depois.
+
 ---
 
 ## Como usar
