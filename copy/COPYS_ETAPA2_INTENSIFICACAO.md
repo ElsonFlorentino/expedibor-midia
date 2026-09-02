@@ -98,6 +98,17 @@ O Expedito já tá de expectativa pra MinasParts 2026. De 30/09 a 03/10, no Expo
 
 **Observação técnica:** o vídeo anterior gerado com esse mascote (`assets/videos/Inclua_na_mao_dele_as_pecas_expedibor.mp4`) veio com a marca d'água do Gemini no canto — se esse também vier, já sei resolver (setup de inpainting já configurado nessa sessão, ver conversa). Ao gerar, tentar já pedir explicitamente sem marca d'água/watermark no prompt, se a ferramenta permitir.
 
+**Rodada 1 (`Roteiro_prompt_de_vídeo_Gem.mp4`):** veio com a fala errada (lip-sync numa frase diferente da legenda) e o banner sem o logo oficial da MinasParts. Tentei corrigir por edição (TTS + composição do logo) em `assets/videos/roteiro-video-gem-editado.mp4` — o logo entrou bem e a marca d'água saiu, mas a sincronia labial não bate com a narração nova (não existe ferramenta de lip-sync confiável pra personagem 3D cartoon sem o rig original). Melhor caminho: regenerar direto no Gemini com o prompt de correção abaixo, que já pede a fala certa com lip-sync nativo do modelo.
+
+**Prompt de correção (colar no Gemini junto com dois anexos: o vídeo `Roteiro_prompt_de_vídeo_Gem.mp4` e a imagem `images.png` do logo oficial da MinasParts 2026):**
+> Use este vídeo como referência exata de personagem, cenário, câmera, iluminação e enquadramento. Mantenha o mascote 3D "Expedito" (boné branco com "EXP" em azul, bigode grosso, macacão azul com "EXPEDIBOR" no bolso), o estande da Expedibor ao fundo e o mesmo movimento lento de aproximação de câmera.
+>
+> A única mudança é a fala dele. Substitua o diálogo por, com sincronia labial correta em português brasileiro: "A Expedibor estará na MinasParts 2026. Venha conhecer nossas soluções em coxins, buchas, batentes, tubos de refrigeração e kits de suspensão."
+>
+> No banner final (o card branco arredondado com a data e o local do evento), corrija a ordem dos logos: o logo da EXPEDIBOR vem primeiro/na frente, e o logo oficial da MinasParts 2026 (imagem anexada) vem depois, atrás ou ao lado dele — nessa ordem de leitura, Expedibor antes de MinasParts. Mantenha o texto "30 SET — 3 OUT · EXPOMINAS BH" como está.
+>
+> Mantenha a duração de 10 segundos e a proporção vertical 9:16.
+
 ---
 
 ## Como usar
