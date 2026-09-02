@@ -117,6 +117,11 @@ O Expedito já tá de expectativa pra MinasParts 2026. De 30/09 a 03/10, no Expo
 
 **Depois de gerar:** me manda o vídeo novo (só com a fala corrigida) — eu recorto e componho o logo oficial da MinasParts no banner por edição direta, igual fiz da última vez.
 
+**Alternativa — Sora (geração do zero, não edição de vídeo existente):** o Sora não tem um modo confiável de "pegar esse vídeo e só trocar a fala" — funciona melhor gerando um vídeo novo do zero a partir de descrição. Por isso o prompt abaixo descreve o personagem e a cena inteira de novo (igual o prompt original do Conceito I), com a fala já curta, e **sem pedir banner/logo nenhum** — isso eu componho depois por edição direta, pelo mesmo motivo do Gemini (risco de inventar o logo). Se o Sora aceitar anexar uma imagem de referência, vale anexar um frame do Expedito (extraído de `Roteiro_prompt_de_vídeo_Gem.mp4`) pra ajudar a manter a cara do personagem.
+
+**Prompt pro Sora (texto-pra-vídeo, 9:16, ~5-6s):**
+> Vertical 9:16 video, 3D-animated mascot character named "Expedito": stocky friendly man, thick brown mustache, blue eyes, white trucker cap with navy blue "EXP" lettering, white t-shirt under navy blue overalls with "EXPEDIBOR" printed on the chest pocket, black work gloves. He stands inside a modern trade-show booth with navy blue panels and soft warm lighting, a blurred product display wall behind him. He smiles warmly, waves with one hand, and speaks directly to camera with natural lip-sync in Brazilian Portuguese, mouth moving for the full length of the line: "A Expedibor estará na MinasParts 2026. Venha nos conhecer." Camera holds a steady medium shot with a slow, gentle push-in toward his face. No on-screen text, no logos, no banner, no watermark — just the character and the booth background, clean plate for text to be added afterward in post-production.
+
 ---
 
 ## Como usar
