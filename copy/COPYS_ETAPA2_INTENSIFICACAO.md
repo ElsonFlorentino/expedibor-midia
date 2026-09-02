@@ -1,6 +1,6 @@
 # Etapa 2 — Criativos da Fase 1 (Intensificação, 10/09 a 30/09)
 
-> Continuação do que foi feito na Etapa 1 (`painel/mockups-instagram-minasparts.html`, criativos de agosto). Esses 4 conceitos são pra alimentar o conjunto de anúncios `[BR][EXPEDIBOR][FASE1-INTENSIFICACAO][MG][MinasParts2026]`, que está pausado e programado pra assumir de 10/09 a 30/09 quando a Fase 0 (Agosto) terminar.
+> Continuação do que foi feito na Etapa 1 (`painel/mockups-instagram-minasparts.html`, criativos de agosto). Esses 5 conceitos (4 imagens + 1 vídeo) são pra alimentar o conjunto de anúncios `[BR][EXPEDIBOR][FASE1-INTENSIFICACAO][MG][MinasParts2026]`, que está pausado e programado pra assumir de 10/09 a 30/09 quando a Fase 0 (Agosto) terminar.
 >
 > Voz: B2B, direta, confiança técnica. Sem travessão, humanizada. **Falta o número do estande** — todo `[Estande XX]` abaixo precisa ser trocado quando o cliente confirmar.
 
@@ -80,10 +80,31 @@ Tem fornecedor que faz um pouco de tudo. A Expedibor faz uma coisa muito bem: bo
 
 ---
 
+## Conceito I · Vídeo do Expedito no estande
+
+**Título:** O Expedito já separou o seu lugar
+
+**Público impactado:** Público amplo do setor em MG, prioridade pra quem já viu a Fase 0 — reforço em vídeo, formato que chama mais atenção em Reels/Stories que os estáticos.
+
+**Intenção:** Dar rosto/personalidade ao convite (o mascote já é reconhecido da Fase 0) e mostrar o estande de um jeito mais vivo que o render estático do Conceito C original, aumentando o tempo de atenção no anúncio.
+
+**Formato:** Vídeo 9:16 · Reels + Stories (cortar também em 1:1 pro feed)
+
+**Legenda final:**
+O Expedito já tá de expectativa pra MinasParts 2026. De 30/09 a 03/10, no Expominas BH, ele vai te esperar no estande com a linha completa de suspensão em borracha e as melhores condições pra sua distribuidora ou oficina. Bora? 👷‍♂️🔧 #Expedibor #MinasParts2026
+
+**Roteiro / prompt de vídeo (Gemini Veo, 9:16, ~8-10s):**
+> Vertical 9:16 video, 3D-animated mascot character "Expedito" — same design as the established Expedibor mascot: stocky friendly man, thick brown mustache, blue eyes, white trucker cap with navy "EXP" lettering, white t-shirt under navy blue overalls with "EXPEDIBOR" printed on the chest pocket, black work gloves. Scene: Expedito standing inside the Expedibor trade-show booth (reuse the established booth design — navy blue panels, backlit white "EXPEDIBOR" logo signage above him, a product display wall behind showing small icons for Expedibor/Expeditubo/Expedikits, warm wood-tone counter with high stools). He waves at camera with one hand and gestures welcomingly toward the counter/products with the other, big warm smile. Camera starts on a medium shot and slowly pushes in toward his face over the duration. Soft, bright trade-show lighting, shallow depth of field with the booth signage visible but slightly soft behind him. At the very end, a text card fades in over the shot: white bold condensed "MINASPARTS 2026" line one, orange "30 SET — 3 OUT · EXPOMINAS BH" line two, small Expedibor logo below. No dialogue/lip-sync needed — mouth can stay in a neutral smile or subtle talking motion, since the voice-over/caption carries the message.
+
+**Observação técnica:** o vídeo anterior gerado com esse mascote (`assets/videos/Inclua_na_mao_dele_as_pecas_expedibor.mp4`) veio com a marca d'água do Gemini no canto — se esse também vier, já sei resolver (setup de inpainting já configurado nessa sessão, ver conversa). Ao gerar, tentar já pedir explicitamente sem marca d'água/watermark no prompt, se a ferramenta permitir.
+
+---
+
 ## Como usar
 
-1. Colar cada prompt de imagem no ChatGPT (um por vez), gerar em 1:1, revisar contra a identidade visual já estabelecida (comparar com os 4 PNGs de agosto em `assets/criativos-agosto-2026/`).
-2. Salvar os PNGs aprovados em `assets/criativos-fase1-intensificacao/`.
-3. Atualizar `campanha/criar-campanha-minasparts.mjs` (ou um script novo `atualizar-fase1.mjs`) pra subir os 4 anúncios no ad set `FASE1-INTENSIFICACAO` (`120249887411690518`), status PAUSED até revisão.
-4. Trocar `[Estande XX]` pelo número real assim que o cliente confirmar.
-5. Construir o mockup visual (`painel/mockups-fase1-intensificacao.html`) igual ao da Etapa 1, quando as imagens estiverem prontas.
+1. Colar cada prompt de imagem no ChatGPT (Conceitos E, F, G, H — um por vez), gerar em 1:1, revisar contra a identidade visual já estabelecida (comparar com os 4 PNGs de agosto em `assets/criativos-agosto-2026/`).
+2. Colar o roteiro de vídeo do Conceito I no Gemini (Veo), gerar em 9:16.
+3. Salvar os PNGs e o vídeo aprovados em `assets/criativos-fase1-intensificacao/`.
+4. Atualizar `campanha/criar-campanha-minasparts.mjs` (ou um script novo `atualizar-fase1.mjs`) pra subir os 5 anúncios no ad set `FASE1-INTENSIFICACAO` (`120249887411690518`), status PAUSED até revisão.
+5. Trocar `[Estande XX]` pelo número real assim que o cliente confirmar.
+6. Construir o mockup visual (`painel/mockups-fase1-intensificacao.html`) igual ao da Etapa 1, quando as imagens estiverem prontas.
