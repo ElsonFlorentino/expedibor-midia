@@ -133,6 +133,39 @@ O Expedito já tá de expectativa pra MinasParts 2026. De 30/09 a 03/10, no Expo
 - Settings: Stability em torno de 40-50% (permite alguma variação natural de entonação sem ficar instável) e Similarity/Style um pouco acima do padrão, pra soar mais expressivo que uma leitura robótica de texto corrido.
 - Exportar em .mp3 ou .wav, qualidade alta (44.1kHz+), pra não perder qualidade quando for sincronizar a boca em cima depois.
 
+**Rodada 3 (`Use_the_supplied_Expedito_refe.mp4`, prompt próprio do Elson com character lock detalhado):** o personagem ficou muito consistente (bigode, proporções, roupa — o "character lock" funcionou bem), mas dois problemas — (1) saiu 1280x720 (16:9 horizontal) mesmo o prompt pedindo "1080 × 1920" em texto — interfaces de geração de vídeo costumam ter um seletor de proporção separado da caixa de texto, que precisa ser ajustado ali, não só descrito; (2) a fala repetiu uma palavra ("estará estará") — instrução de diálogo precisa reforçar explicitamente "sem repetição, sem gagueira, numa tomada só".
+
+**Prompt corrigido — v4 (mesma base do prompt do Elson, com reforço de formato + fala):**
+> Use the supplied Expedito reference images as an ABSOLUTE CHARACTER IDENTITY REFERENCE.
+>
+> Create a 10-second vertical 9:16 video, 1080 × 1920, featuring the exact Expedito mascot shown in the supplied reference images.
+>
+> ⚠️ OUTPUT FORMAT — SET THIS IN THE TOOL'S ASPECT RATIO CONTROL, NOT ONLY IN TEXT: 9:16 vertical, 1080 × 1920. If the interface has a separate aspect ratio / format selector outside this text box, set it to 9:16 before generating — text alone may not override it.
+>
+> CRITICAL CHARACTER LOCK:
+>
+> Expedito must remain 100% identical to the reference character during the entire video.
+>
+> Do NOT redesign, reinterpret, beautify, modernize or generate a similar character.
+>
+> Preserve exactly: same round head shape · same short, stocky body proportions · same large blue eyes, exact size and spacing · same eyebrows · same round orange-toned nose · same ears · same brown hair · same thick brown curled mustache, exact shape, volume and curvature · same smile and teeth · same skin tone · same white-and-blue trucker cap with EXP · same white T-shirt · same blue Expedibor overalls · same EXPEDIBOR chest marking · same black work gloves · same black work boots · same original polished 3D mascot style.
+>
+> Do not change the mustache while speaking or blinking. The mustache must remain rigidly consistent in shape throughout every frame.
+>
+> Scene: Expedito is standing inside a modern automotive trade-show booth inspired by MinasParts, with dark navy-blue structures, subtle industrial details and warm professional exhibition lighting. The booth must remain slightly blurred and secondary. Do NOT place Expedibor, EXP, MinasParts or any other readable logo or text in the background — the only existing brand markings allowed are the ones already physically present on Expedito's cap and overalls.
+>
+> Framing: medium shot, approximately from thighs/waist upward. Keep enough negative space around the character for text to be added later in post-production. Do not turn the shot into a close-up. Camera remains almost static with only a very subtle cinematic push-in of approximately 5% during the entire 10 seconds. No cuts. No camera rotation. No aggressive zoom.
+>
+> Performance — 0-2s: Expedito looks directly into the camera, smiles and gives a small friendly wave with one hand. 2-8s: he lowers his hand naturally and speaks directly to camera, natural Brazilian Portuguese lip-sync, only the mouth/jaw/subtle expressions move, allow one natural blink, do not distort eyes/nose/cheeks/mustache during lip-sync. 8-10s: he finishes the sentence, smiles warmly and gives a subtle thumbs-up toward the camera.
+>
+> Exact dialogue (say it exactly once, do not repeat any word, do not stutter, no hesitation, no retake, no false start): "A Expedibor estará na MinasParts 2026. Venha nos conhecer." Speak the sentence fluently from start to finish in a single continuous take. Do not repeat "estará" or any other word. Do not pause mid-sentence and restart. If a word comes out unclear, keep going forward — never loop back to re-say it.
+>
+> Voice: adult Brazilian male, friendly, confident, professional, energetic but natural. Pronunciation must be clear and unhurried. Do not add, remove, repeat or paraphrase any words.
+>
+> Important negative instructions — DO NOT: create a new version of Expedito · change his facial proportions · enlarge or shrink his eyes · alter his nose · modify the mustache · animate the mustache independently · change his clothes · change the cap · change EXP or EXPEDIBOR markings · make him more realistic · make him more cartoonish · change the original 3D rendering style · add another mascot · add products to his hands · add banners · add subtitles · add captions · add CTA graphics · add floating text · add logos to the booth · add readable signage · add decorative typography · add transitions · add cuts · use extreme depth of field · create a close-up · **repeat, stutter, or re-say any word of the dialogue** · **output in 16:9 or any format other than 9:16 vertical**.
+>
+> Priority order: exact output format (9:16 vertical, 1080×1920) · exact character identity · exact face and mustache consistency · correct lip-sync and dialogue, spoken exactly once without repetition · natural gesture · booth/background · camera movement.
+
 ---
 
 ## Como usar
