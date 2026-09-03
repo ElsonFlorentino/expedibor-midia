@@ -166,6 +166,15 @@ O Expedito já tá de expectativa pra MinasParts 2026. De 30/09 a 03/10, no Expo
 >
 > Priority order: exact output format (9:16 vertical, 1080×1920) · exact character identity · exact face and mustache consistency · correct lip-sync and dialogue, spoken exactly once without repetition · natural gesture · booth/background · camera movement.
 
+**Rodada 4 (Google Flow, `Mascot_speaks_at_trade_show_202609022138.mp4`):** formato saiu certo (720x1280, 9:16 confirmado) e o personagem ficou muito consistente — o Flow resolveu os dois problemas da Rodada 3. Só sobrou a fala: gaguejou de novo, dessa vez em "MinasParts" ("Mina MinasParts..."). Mesma categoria de falha da Rodada 3 (repetição/gagueira), agora numa palavra diferente — parece ser instabilidade do modelo em palavras compostas/estrangeiras, não um problema de formato ou duração.
+
+**Prompt corrigido — v5 (só a seção de diálogo muda; resto do prompt da v4 continua igual, já funcionou):**
+> Exact dialogue (say it exactly once, fluently, from the very first attempt — do not repeat any word, do not stutter, do not restart, no false start, no self-correction, no hesitation): "A Expedibor estará na MinasParts 2026. Venha nos conhecer."
+>
+> Pay special attention to the word "MinasParts" — it is a single compound brand name (pronounced "MI-nas PARTS", like two Portuguese words said together fluently). Say it in one smooth motion, with no false start before it (do not say "Mina" and then restart with "MinasParts" — say the whole word "MinasParts" correctly on the first try).
+>
+> Speak the entire sentence fluently from start to finish in a single continuous take, as if it were a professional voice-over recorded in one clean pass. Do not repeat any word. Do not pause mid-word and restart. If any word comes out slightly unclear, keep moving forward naturally — never loop back to re-say it.
+
 ---
 
 ## Como usar
