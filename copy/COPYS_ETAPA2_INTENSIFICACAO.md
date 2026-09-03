@@ -175,6 +175,32 @@ O Expedito já tá de expectativa pra MinasParts 2026. De 30/09 a 03/10, no Expo
 >
 > Speak the entire sentence fluently from start to finish in a single continuous take, as if it were a professional voice-over recorded in one clean pass. Do not repeat any word. Do not pause mid-word and restart. If any word comes out slightly unclear, keep moving forward naturally — never loop back to re-say it.
 
+**Rodada 5:** v5 ainda não corrigiu. Decisão: trocar pra um roteiro mais completo (2 frases, 36 palavras, ~14,4s em ritmo natural) já que o Flow aceita mais que os 8s "oficiais" do Veo — texto novo: "A Expedibor estará presente na MinasParts 2026 levando um portfólio completo para o mercado de reposição automotiva. Uma oportunidade para conhecer de perto nossas soluções em coxins, buchas, batentes, tubos de refrigeração e kits de suspensão."
+
+**Prompt corrigido — v6 (só as seções de duração/performance/diálogo mudam; character lock, cena e enquadramento da v4 continuam iguais):**
+> Create a video, approximately 15-17 seconds long (use the maximum single-generation duration your interface allows — if it caps below this, generate the longest version possible and immediately use the "estender"/continue feature to finish the sentence in the same continuous shot, without a visual cut), vertical 9:16, 1080 × 1920, featuring the exact Expedito mascot shown in the supplied reference images.
+>
+> [reaproveitar aqui os blocos CRITICAL CHARACTER LOCK, Scene e Framing exatamente como estão na v4 — não precisam mudar, já funcionaram bem no Flow]
+>
+> Performance:
+> 0-1.5s: Expedito looks directly into the camera, smiles and gives a small friendly wave with one hand.
+> 1.5-14.5s: he lowers his hand naturally and speaks directly to camera for the entire dialogue, natural Brazilian Portuguese lip-sync, only mouth/jaw/subtle expressions move, one or two natural blinks are fine over this longer duration, no distortion of eyes/nose/cheeks/mustache during lip-sync.
+> 14.5-17s: he finishes the sentence, smiles warmly and gives a subtle thumbs-up toward the camera.
+>
+> Exact dialogue (say it exactly once, fluently, from the very first attempt, at a natural unhurried pace that fills the full speaking window above — do not repeat any word, do not stutter, do not restart, no false start, no self-correction, no hesitation):
+>
+> "A Expedibor estará presente na MinasParts 2026 levando um portfólio completo para o mercado de reposição automotiva. Uma oportunidade para conhecer de perto nossas soluções em coxins, buchas, batentes, tubos de refrigeração e kits de suspensão."
+>
+> Pay special attention to the word "MinasParts" — it is a single compound brand name (pronounced "MI-nas PARTS", like two Portuguese words said together fluently). Say it in one smooth motion, with no false start before it (do not say "Mina" and then restart with "MinasParts" — say the whole word correctly on the first try). Also pay attention to "portfólio", "reposição automotiva" and "refrigeração" — pronounce each fully and clearly, without splitting, repeating or restarting any of them.
+>
+> Speak the entire sentence fluently from start to finish in a single continuous take, as if it were a professional voice-over recorded in one clean pass, with a natural short pause (breath, not a restart) between the two sentences at "automotiva. Uma oportunidade...". Do not repeat any word. Do not pause mid-word and restart. If any word comes out slightly unclear, keep moving forward naturally — never loop back to re-say it.
+>
+> Voice: adult Brazilian male, friendly, confident, professional, energetic but natural. Pronunciation must be clear and unhurried. Do not add, remove, repeat or paraphrase any words.
+>
+> [reaproveitar aqui o bloco Important negative instructions e o Priority order da v4, sem mudança]
+
+**Se o Flow não aceitar 15-17s numa geração só:** gerar os primeiros ~8-10s (até "...automotiva."), depois usar "estender" pra completar a segunda frase, informando no prompt da extensão que é a MESMA cena/personagem continuando a falar, sem corte visual.
+
 ---
 
 ## Como usar
