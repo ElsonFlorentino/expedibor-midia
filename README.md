@@ -17,7 +17,8 @@ Anunciar a presença da Expedibor na feira **MinasParts 2026** (Expominas, Belo 
 | [docs/midia/PLANO_MIDIA_AWARENESS_MINASPARTS.md](docs/midia/PLANO_MIDIA_AWARENESS_MINASPARTS.md) | Plano de mídia da feira (Meta + Google), verba, cronograma, segmentação |
 | [copy/COPYS_AWARENESS_MINASPARTS.md](copy/COPYS_AWARENESS_MINASPARTS.md) | Copies e roteiros de vídeo (estático + vídeo) |
 | [painel/mockups-instagram-minasparts.html](painel/mockups-instagram-minasparts.html) | Etapa 1 (Fase 0/Agosto): mockups visuais dos posts, legendas, público por criativo |
-| [copy/COPYS_ETAPA2_INTENSIFICACAO.md](copy/COPYS_ETAPA2_INTENSIFICACAO.md) | Etapa 2 (Fase 1/Intensificação, 10-30/09): 4 conceitos de criativo + prompt de imagem pra gerar no ChatGPT |
+| [copy/COPYS_ETAPA2_INTENSIFICACAO.md](copy/COPYS_ETAPA2_INTENSIFICACAO.md) | Etapa 2 (Fase 1/Intensificação, 10-30/09): 5 conceitos de criativo (4 imagem + 1 vídeo) + prompts pra ChatGPT/Gemini/Sora/ElevenLabs |
+| [painel/mockups-fase1-intensificacao.html](painel/mockups-fase1-intensificacao.html) | Etapa 2: mockups visuais dos 4 criativos de imagem já gerados, legendas, público por criativo |
 
 ## Estrutura
 
