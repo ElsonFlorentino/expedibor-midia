@@ -201,6 +201,27 @@ O Expedito já tá de expectativa pra MinasParts 2026. De 30/09 a 03/10, no Expo
 
 **Se o Flow não aceitar 15-17s numa geração só:** gerar os primeiros ~8-10s (até "...automotiva."), depois usar "estender" pra completar a segunda frase, informando no prompt da extensão que é a MESMA cena/personagem continuando a falar, sem corte visual.
 
+**Rodada 6:** fala saiu certa (v6 funcionou), mas o fundo/estande veio diferente do esperado — o Flow reinterpretou o cenário em vez de manter o padrão visual já estabelecido. Elson vai anexar uma foto real do estande como referência, além da referência do Expedito.
+
+**Trava de fundo — v7 (substitui só o bloco "Scene" da v6; troca a referência de dois personagens pra referência de personagem + referência de fundo):**
+> Use the supplied Expedito reference images as an ABSOLUTE CHARACTER IDENTITY REFERENCE, and use the supplied background/booth reference photo as an ABSOLUTE BACKGROUND REFERENCE.
+>
+> CRITICAL BACKGROUND LOCK:
+>
+> The booth/environment must match the supplied background reference photo as closely as possible — same structure, same navy-blue panels, same layout, same lighting mood, same general depth and camera height.
+>
+> Do NOT redesign, reinterpret, simplify or invent a different booth. Do NOT replace it with a generic trade-show background.
+>
+> The background reference photo takes priority over any general description of "a modern trade-show booth" — treat the photo as the actual set, not as inspiration.
+>
+> Expedito stands in front of this exact environment, slightly closer to camera than the background, which stays slightly softer/secondary in focus (subtle depth of field), but still clearly recognizable as the same photographed location — not a reinvented 3D-rendered version of it.
+>
+> Do NOT place Expedibor, EXP, MinasParts or any other readable logo or text beyond what is already visible in the background reference photo itself.
+>
+> [resto do prompt — Framing, Performance, Exact dialogue, Voice, Important negative instructions, Priority order — continua igual à v6, já funcionou]
+>
+> Add to Priority order, right after "exact character identity": **exact background match to the supplied reference photo**.
+
 ---
 
 ## Como usar
