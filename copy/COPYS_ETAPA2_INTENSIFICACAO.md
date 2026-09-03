@@ -55,7 +55,7 @@ Distribuidor, lojista, aplicador: a Expedibor quer te conhecer pessoalmente. Na 
 **Formato:** Imagem única · feed
 
 **Legenda final:**
-Buchas, batentes, coxins, kits de amortecedor e tubos: mais de 800 itens numa linha só. Na MinasParts 2026, você vê de perto a cobertura completa da Expedibor pra suspensão em borracha. Estande [XX], Expominas BH, 30/09 a 03/10. 🔩📦 #Expedibor #LinhaCompleta
+Buchas, batentes, coxins, kits de amortecedor e tubos: 1.289 itens para diferentes aplicações. Na MinasParts 2026, você vê de perto a linha Expedibor para suspensão, motor e câmbio. Estande Q151, Expominas BH, 30/09 a 03/10. 🔧📦 #Expedibor #LinhaCompleta
 
 **Prompt de imagem (ChatGPT/DALL-E, 1:1):**
 > Instagram feed ad, square 1:1. Studio product photography, five distinct Expedibor rubber suspension parts (bushing, bump stop, mount/coxim, an assembled shock kit, a cooling tube) arranged in a clean grid or fanned composition on a dark navy gradient background, dramatic single-source studio lighting with soft reflections, high production value like a premium auto-parts catalog cover. Each part subtly labeled with a thin white category tag below it (Buchas / Batentes / Coxins / Kits / Tubos). Bold white condensed headline across the top: "UMA LINHA, TODAS AS APLICAÇÕES", with "+800 ITENS" in orange as a secondary line. Expedibor logo bottom-right, small MinasParts 2026 date lockup bottom-left. No people.
