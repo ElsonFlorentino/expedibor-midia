@@ -154,6 +154,18 @@ CSS = '''
     .chart-box .chart-sub{font-size:8px;color:var(--muted);margin-bottom:2mm}
     .proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:4mm;margin-top:4mm}
     .bar-track span[data-x]{background:#b9cbd9}
+    #resumo .lead{margin-bottom:4mm}
+    #resumo .insight-banner{min-height:0;padding:5mm 6mm}
+    #resumo .winner-panel{gap:3mm}
+    #resumo .winner-box{padding:3mm 4mm}
+    #resumo .kpi-grid{margin-top:4mm;gap:3mm}
+    #resumo .kpi-card{min-height:0;padding:3.5mm 4.5mm}
+    #resumo .kpi-card strong{margin:2mm 0 1.5mm}
+    #resumo .metric-guide{margin-top:3.5mm;padding:3mm 5mm}
+    #funil .yield-card{margin-top:4mm;padding:4mm 5mm}
+    #funil .yield-card .bar-row{margin:2mm 0}
+    #funil .yield-card .bar-track{height:4.5mm}
+    #funil .method-strip{margin-top:3mm}
 '''
 
 
