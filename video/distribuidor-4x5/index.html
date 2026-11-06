@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="pt-BR" data-resolution="custom">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1350" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <style>
+      :root { --navy: #050b1a; --blue: #1f6bff; --cyan: #5cc8ff; --muted: #a9c2ea;
+        --W: 1080px; --H: 1350px; --img-top: -300px; --head-top: 120px; --logo-top: 45px; --mid: -200px; }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: var(--W); height: var(--H); overflow: hidden; background: var(--navy); }
+      #root { position: relative; width: 100%; height: 100%; overflow: hidden; color: #fff; font-family: Inter, sans-serif; background: var(--navy); }
+      .shot { position: absolute; inset: 0; overflow: hidden; z-index: 1; }
+      img.ph { position: absolute; left: 0; top: var(--img-top); width: 1080px; height: 1935px; object-fit: cover; }
+      .wipe { position: absolute; inset: 0; }
+      .scan { position: absolute; top: 0; left: 0; width: 26px; height: 100%; z-index: 2; }
+      .scan .bar { position: absolute; inset: 0; background: linear-gradient(90deg, transparent, rgba(92,200,255,0.9), #fff, rgba(92,200,255,0.9), transparent); box-shadow: 0 0 60px 24px rgba(31,107,255,0.65); }
+      #scrimTop { position: absolute; top: 0; left: 0; width: 100%; height: 560px; z-index: 2; background: linear-gradient(180deg, rgba(5,11,26,0.92) 0%, rgba(5,11,26,0.55) 55%, transparent 100%); }
+      #logo { position: absolute; top: var(--logo-top); left: 380px; width: 320px; z-index: 5; filter: drop-shadow(0 4px 18px rgba(0,0,0,0.6)); }
+      .head { position: absolute; top: var(--head-top); left: 0; width: 100%; text-align: center; font-family: Oswald, sans-serif; font-weight: 700; line-height: 1.02; z-index: 4; text-shadow: 0 6px 30px rgba(0,0,0,0.75); }
+      .head .ln { display: block; font-size: 100px; }
+      .head .sk { display: inline-block; transform: skewX(-9deg); }
+      .blue { color: var(--blue); text-shadow: 0 0 34px rgba(31,107,255,0.6), 0 6px 30px rgba(0,0,0,0.75); }
+      .big { font-size: 170px !important; line-height: 0.95 !important; margin-top: 18px; }
+
+      .panel { position: absolute; inset: 0; z-index: 3; background: radial-gradient(ellipse 80% 55% at 50% 48%, #0d2a66 0%, #050b1a 78%); }
+      .center { position: absolute; top: calc(var(--mid) + 0px); left: 0; width: 1080px; height: 1920px; }
+      #count { position: absolute; top: 300px; width: 100%; text-align: center; font-family: Oswald, sans-serif; font-weight: 700; }
+      #num { font-size: 220px; line-height: 1; }
+      #numlab { font-size: 50px; letter-spacing: 0.12em; color: var(--cyan); margin-top: 6px; }
+      #vitrine { position: absolute; top: 640px; left: 0; width: 1080px; height: 360px; perspective: 1400px; }
+      #anel { position: absolute; left: 440px; top: 80px; width: 200px; height: 200px; transform-style: preserve-3d; }
+      .item { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+      .item img { max-width: 180px; max-height: 175px; object-fit: contain; filter: drop-shadow(0 0 22px rgba(92,200,255,0.55)); }
+      #chao { position: absolute; left: 190px; top: 280px; width: 700px; height: 80px; border-radius: 50%; background: radial-gradient(ellipse at center, rgba(92,200,255,0.45), rgba(31,107,255,0.15) 45%, transparent 70%); }
+      #chips { position: absolute; top: 1050px; left: 70px; width: 940px; display: flex; flex-wrap: wrap; justify-content: center; gap: 18px; }
+      .chip { padding: 16px 30px; border-radius: 40px; border: 3px solid var(--cyan); background: rgba(31,107,255,0.18); font-family: Oswald, sans-serif; font-weight: 700; font-size: 44px; letter-spacing: 0.04em; }
+
+      #forn { position: absolute; top: 760px; width: 100%; text-align: center; }
+      #forn .t { font-family: Oswald, sans-serif; font-weight: 700; font-size: 110px; line-height: 1; }
+      #forn .logos { margin-top: 70px; display: flex; flex-direction: column; align-items: center; gap: 40px; }
+      #forn .logos img { height: 64px; }
+
+      #fab .dimm { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(5,11,26,0.85), rgba(5,11,26,0.55) 40%, rgba(5,11,26,0.9)); }
+      #fabTxt { position: absolute; top: 330px; width: 100%; text-align: center; font-family: Oswald, sans-serif; font-weight: 700; }
+      #fabTxt .a { font-size: 100px; line-height: 1; }
+      #fabTxt .b { font-size: 50px; color: var(--cyan); letter-spacing: 0.08em; margin-top: 16px; }
+      #isoBig { position: absolute; top: 760px; left: 390px; width: 300px; height: 308px; padding: 20px; border-radius: 40px; background: #fff; box-shadow: 0 0 80px rgba(92,200,255,0.5); }
+      #isoBig img { width: 100%; height: 100%; object-fit: contain; }
+
+      #end { z-index: 6; position: absolute; inset: 0; }
+      #endShade { position: absolute; inset: 0; background: radial-gradient(ellipse 80% 50% at 50% 50%, rgba(13,42,102,0.95), rgba(5,11,26,1) 75%); }
+      #endBox { position: absolute; top: var(--mid); left: 0; width: 1080px; height: 1920px; }
+      #endLogo { position: absolute; top: 420px; left: 190px; width: 700px; }
+      #slogan { position: absolute; top: 600px; width: 100%; text-align: center; font-size: 50px; font-weight: 700; }
+      #pecas { position: absolute; top: 720px; left: 90px; width: 900px; height: 240px; display: flex; justify-content: space-between; align-items: flex-end; }
+      #pecas img { max-width: 160px; max-height: 210px; object-fit: contain; filter: drop-shadow(0 0 20px rgba(92,200,255,0.5)); }
+      #cta { position: absolute; top: 1040px; left: 110px; width: 860px; height: 120px; border-radius: 60px; background: var(--blue); display: flex; align-items: center; justify-content: center; font-family: Oswald, sans-serif; font-weight: 700; font-size: 56px; letter-spacing: 0.04em; box-shadow: 0 10px 50px rgba(31,107,255,0.6); }
+      #site { position: absolute; top: 1190px; width: 100%; text-align: center; font-family: "JetBrains Mono", monospace; font-weight: 700; font-size: 40px; color: var(--cyan); }
+      .flash { position: absolute; inset: 0; z-index: 7; background: radial-gradient(circle, rgba(255,255,255,0.9), rgba(92,200,255,0.6) 50%, rgba(31,107,255,0.35)); }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="21.8" data-width="1080" data-height="1350">
+      <audio id="voz" class="clip" src="assets/voz/narracao.wav" data-start="0.3" data-duration="20.1" data-volume="1" data-track-index="20"></audio>
+      <audio id="fx1" class="clip" src="assets/sfx/whoosh-cinematic.mp3" data-start="2.6" data-duration="1.8" data-volume="0.4" data-track-index="21"></audio>
+      <audio id="fx2" class="clip" src="assets/sfx/whoosh.mp3" data-start="5.1" data-duration="0.6" data-volume="0.4" data-track-index="22"></audio>
+      <audio id="fx3" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="11.2" data-duration="0.6" data-volume="0.4" data-track-index="21"></audio>
+      <audio id="fx4" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="12.6" data-duration="0.6" data-volume="0.4" data-track-index="22"></audio>
+      <audio id="fx5" class="clip" src="assets/sfx/impact-bass-1.mp3" data-start="16.1" data-duration="2.0" data-volume="0.5" data-track-index="21"></audio>
+      <audio id="fx6" class="clip" src="assets/sfx/sparkle.mp3" data-start="18.7" data-duration="1.5" data-volume="0.3" data-track-index="22"></audio>
+
+      <!-- 1. Oficina -->
+      <div id="sA" class="shot clip" data-start="0" data-duration="4.2" data-track-index="1"><img id="imgA" class="ph" src="assets/A-limpo.jpg" alt="" /></div>
+      <div id="sB" class="shot clip" data-start="2.8" data-duration="2.6" data-track-index="2"><div class="wipe" id="wipeB"><img id="imgB" class="ph" src="assets/B-limpo.jpg" alt="" /></div></div>
+      <div id="scan1" class="scan clip" data-start="2.8" data-duration="1.3" data-track-index="3"><div class="bar"></div></div>
+      <div id="sMec" class="shot clip" data-start="0" data-duration="4.4" data-track-index="4"><img id="mec" class="ph" src="assets/A-mecanico.png" alt="" /></div>
+      <div id="scrimTop"></div>
+      <img id="logo" src="assets/expedibor-logo-white.png" alt="Expedibor" />
+
+      <div id="t1" class="head clip" data-start="0" data-duration="2.8" data-track-index="5">
+        <span class="ln"><span class="sk">DISTRIBUIDOR DE</span></span>
+        <span class="ln"><span class="sk">AUTOPEÇAS NO RS?</span></span>
+      </div>
+      <div id="t2" class="head clip" data-start="2.9" data-duration="2.4" data-track-index="5">
+        <span class="ln"><span class="sk">CONHEÇA QUEM FABRICA</span></span>
+        <span class="ln big"><span class="sk blue">HÁ +25 ANOS.</span></span>
+      </div>
+
+      <!-- 3. Linha completa -->
+      <div id="sLinha" class="panel clip" data-start="5.2" data-duration="6.1" data-track-index="6" data-layout-allow-overflow>
+        <div class="center">
+          <div id="count"><div id="num">+0</div><div id="numlab">ITENS EM METAL E BORRACHA</div></div>
+          <div id="vitrine"><div id="chao"></div>
+            <div id="anel">
+              <div class="item" style="transform: rotateY(0deg) translateZ(380px)"><img src="assets/W-1034.png" alt="" /></div>
+              <div class="item" style="transform: rotateY(51.4deg) translateZ(380px)"><img src="assets/W-2074.png" alt="" /></div>
+              <div class="item" style="transform: rotateY(102.8deg) translateZ(380px)"><img src="assets/T-5549.png" alt="" /></div>
+              <div class="item" style="transform: rotateY(154.2deg) translateZ(380px)"><img src="assets/W-2060k.png" alt="" /></div>
+              <div class="item" style="transform: rotateY(205.6deg) translateZ(380px)"><img src="assets/W-8013.png" alt="" /></div>
+              <div class="item" style="transform: rotateY(257deg) translateZ(380px)"><img src="assets/W-4067.png" alt="" /></div>
+              <div class="item" style="transform: rotateY(308.4deg) translateZ(380px)"><img src="assets/T-7701.png" alt="" /></div>
+            </div>
+          </div>
+          <div id="chips">
+            <div class="chip">SUSPENSÃO</div><div class="chip">MOTOR</div><div class="chip">CÂMBIO</div><div class="chip">REFRIGERAÇÃO</div><div class="chip">AMORTECEDOR</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Um fornecedor -->
+      <div id="sForn" class="panel clip" data-start="11.2" data-duration="1.5" data-track-index="7">
+        <div class="center"><div id="forn"><div class="t"><span class="sk">TUDO NUM</span><br><span class="sk blue">FORNECEDOR SÓ.</span></div>
+          <div class="logos"><img src="assets/expedibor-logo-white.png" alt="" /><img src="assets/site-logo_expeditubo.png" alt="" /><img src="assets/site-logo_expedikits.png" alt="" /></div></div></div>
+      </div>
+
+      <!-- 5. Fábrica e ISO -->
+      <div id="fab" class="shot clip" data-start="12.6" data-duration="3.6" data-track-index="8" style="z-index:3">
+        <img id="imgFab" class="ph" src="assets/D.jpg" alt="" /><div class="dimm"></div>
+        <div class="center"><div id="fabTxt"><div class="a"><span class="sk">FÁBRICA PRÓPRIA</span></div><div class="b">FERRAZ DE VASCONCELOS · SP</div></div>
+          <div id="isoBig"><img src="assets/logo-ISO-9001-1.png" alt="ISO 9001" /></div></div>
+      </div>
+
+      <!-- 6. Fechamento -->
+      <div id="end" class="clip" data-start="16.1" data-duration="5.7" data-track-index="9" data-layout-allow-overflow>
+        <div id="endShade"></div>
+        <div id="endBox">
+          <img id="endLogo" src="assets/expedibor-logo-white.png" alt="Expedibor" />
+          <div id="slogan">Qualidade e confiança, peça por peça.</div>
+          <div id="pecas"><img src="assets/W-1034.png" alt="" /><img src="assets/W-2074.png" alt="" /><img src="assets/W-8013.png" alt="" /><img src="assets/W-2060k.png" alt="" /><img src="assets/T-5549.png" alt="" /></div>
+          <div id="cta">SOLICITE O CATÁLOGO</div>
+          <div id="site">expedibor.com.br</div>
+        </div>
+      </div>
+
+      <div id="fl1" class="flash clip" data-start="5.1" data-duration="0.35" data-track-index="10"></div>
+      <div id="fl2" class="flash clip" data-start="11.1" data-duration="0.35" data-track-index="10"></div>
+      <div id="fl3" class="flash clip" data-start="12.5" data-duration="0.35" data-track-index="10"></div>
+    </div>
+
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      const E = "power3.out", ORIG = "58% 40%";
+      tl.fromTo(["#imgA", "#imgB"], { scale: 1.0, transformOrigin: ORIG }, { scale: 1.12, duration: 5.2, ease: "sine.inOut" }, 0);
+      tl.fromTo("#mec", { scale: 1.0, x: 0, transformOrigin: "0% 100%" }, { scale: 1.2, x: -70, duration: 3.95, ease: "sine.inOut" }, 0);
+      tl.fromTo("#wipeB", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 1.2, ease: "power2.inOut" }, 2.8);
+      tl.fromTo("#scan1 .bar", { x: -40, opacity: 1 }, { x: 1100, duration: 1.2, ease: "power2.inOut" }, 2.8);
+      tl.to("#scan1 .bar", { opacity: 0, duration: 0.1 }, 3.98);
+      tl.to("#mec", { x: -520, scale: 1.45, opacity: 0, duration: 0.5, ease: "power2.in" }, 4.0);
+      tl.fromTo("#logo", { opacity: 0, y: -14 }, { opacity: 1, y: 0, duration: 0.4, ease: E }, 0.5);
+      tl.to("#logo", { opacity: 0, duration: 0.25 }, 5.0);
+
+      tl.fromTo("#t1 .ln", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.3, ease: E, stagger: 0.12 }, 0.05);
+      tl.to("#t1 .ln", { opacity: 0, y: -20, duration: 0.2 }, 2.58);
+      tl.fromTo("#t2 .ln", { opacity: 0, x: -50 }, { opacity: 1, x: 0, duration: 0.35, ease: E, stagger: 0.25 }, 2.95);
+      tl.to("#t2 .ln", { opacity: 0, duration: 0.2 }, 5.05);
+
+      // linha completa
+      const n = { v: 0 };
+      const fmt = (v) => "+" + Math.round(v).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+      tl.fromTo("#count", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.3, ease: E }, 5.25);
+      tl.fromTo(n, { v: 0 }, { v: 1300, duration: 1.4, ease: "power2.out", onUpdate: () => { document.getElementById("num").textContent = fmt(n.v); } }, 5.3);
+      tl.fromTo("#vitrine", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.4, ease: E }, 5.4);
+      tl.fromTo("#anel", { rotationY: 40, rotationX: -8 }, { rotationY: -320, rotationX: -8, duration: 6.0, ease: "none" }, 5.3);
+      tl.fromTo(".chip", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)", stagger: 0.55 }, 7.6);
+
+      tl.fromTo("#forn .t", { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.3, ease: E }, 11.25);
+      tl.fromTo("#forn .logos img", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.25, ease: E, stagger: 0.12 }, 11.4);
+
+      tl.fromTo("#imgFab", { scale: 1.05, transformOrigin: "50% 60%" }, { scale: 1.2, duration: 3.8, ease: "sine.inOut" }, 12.6);
+      tl.fromTo("#fabTxt > *", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.35, ease: E, stagger: 0.15 }, 12.7);
+      tl.fromTo("#isoBig", { opacity: 0, scale: 0.5, rotationY: -60 }, { opacity: 1, scale: 1, rotationY: 0, duration: 0.6, ease: "back.out(1.6)" }, 14.0);
+
+      tl.fromTo("#endShade", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 16.1);
+      tl.fromTo("#endLogo", { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.4, ease: E }, 16.15);
+      tl.fromTo("#slogan", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.3, ease: E }, 16.6);
+      tl.fromTo("#pecas img", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.35, ease: "back.out(1.6)", stagger: 0.08 }, 16.8);
+      tl.fromTo("#cta", { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(2)" }, 18.6);
+      tl.fromTo("#site", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 18.9);
+      tl.to("#cta", { scale: 1.04, duration: 0.3, yoyo: true, repeat: 1, ease: "sine.inOut" }, 20.2);
+
+      [5.1, 11.1, 12.5].forEach((t, i) => {
+        tl.fromTo(`#fl${i + 1}`, { opacity: 0 }, { opacity: 0.8, duration: 0.08, ease: "none" }, t);
+        tl.to(`#fl${i + 1}`, { opacity: 0, duration: 0.24, ease: "power2.out" }, t + 0.09);
+      });
+
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>
